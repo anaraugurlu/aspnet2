@@ -1,0 +1,30 @@
+﻿@model aspnet2.Models.PersonViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body style="background-color: #EEA47FFF ">
+    <form asp-action="Register" asp-controller="Home" enctype="multipart/form-data" style="margin-left:15px">
+        <div class="form-group" >
+            <label>Name</label>
+            <input asp-for="@Model.Person.Name" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+            <label>Image</label>
+            <input type="file" asp-for="@Model.File">
+        </div>
+        <button type="submit" style="background-color: #00539CFF; color: #EEA47FFF " class="btn btn-primary">Add</button>
+    </form>
+</body>
+</html>

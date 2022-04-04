@@ -1,0 +1,38 @@
+﻿@model aspnet2.Models.PersonListViewModel
+
+@{
+    Layout = null;
+    string title = "Our Razor Introduction";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body style="background-color:#EEA47FFF">
+    @{
+        var result = (bool)ViewData["HR"];
+
+    }
+ 
+    @foreach (var item in Model.Persons)
+    {
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" style="height:50px;width:50px" src="~/images/@item.ImageUrl" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+            </div>
+        </div>
+    }
+
+    <a asp-controller="Home" asp-action="Register"  style="background-color: #00539CFF; color: #EEA47FFF " class="m-5 btn btn-primary">Go Registration</a>
+
+
+
+</body>
+</html>
